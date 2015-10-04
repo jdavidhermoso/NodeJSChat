@@ -1,0 +1,12 @@
+{
+	"name": "NodeJSchat",
+    "version": "0.1.0",
+    "description": "Chat built with NodeJS",
+    "main": "app.js",
+    "author": "Juan David Hermoso <juandavidhermoso@gmail.com",
+    "dependencies": {
+      "express": "~3.2.4",
+      "socket.io": "~0.9.14"
+    }
+
+}
