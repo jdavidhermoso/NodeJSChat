@@ -7,7 +7,7 @@ var chat = {
         var messageSendButton = document.getElementById('chat-send-button');
         var message_input = document.getElementById('chat-message-input');
 
-       
+
 
         messageSendButton.addEventListener('click', function(e){
             chat.sendMessage(message_input);
