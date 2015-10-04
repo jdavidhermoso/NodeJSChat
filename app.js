@@ -9,7 +9,7 @@ app.get('/',function(req,res){
     res.sendfile(__dirname+'/index.html');
 });
 
-io.socket.on('connection', function(socket){
+io.sockets.on('connection', function(socket){
     //Every time someon connects to the chat, a socket is created.
 
     socket.on('sendMessage', function(data) {
