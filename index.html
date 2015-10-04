@@ -10,8 +10,14 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="./js/chat.js"></script>
 </head>
     <body>
         <div class="container">
@@ -20,7 +26,33 @@
                     Chat with Node JS
                 </h1>
             </header>
+            <div class="row">
+                <div class="col-md-10">
+                    Chat
 
+                </div>
+                <div class="col-md-2">
+                    Users list
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <form id="sendMessage">
+                        <div class="input-group">
+                            <input type="text" class="form-control chat-message-input" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" id="chat-send-button">
+                                    Send!
+                                </button>
+                            </span>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
         </div>
 
 
