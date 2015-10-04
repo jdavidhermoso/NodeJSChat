@@ -14,10 +14,9 @@ app.get('/',function(req,res){
 
 io.sockets.on('connection', function(socket){
     //Every time someone connects to the chat, a socket is created.
-    console.log('connected');
-
     socket.on('sendMessage', function(data) {
-        io.socket.emit('newMessage', {msg:data});
+
+        io.sockets.emit('newMessage', {msg: data});
 
     });
 });

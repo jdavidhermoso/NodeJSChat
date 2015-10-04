@@ -10,6 +10,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
+    <link rel="stylesheet" href="./css/chat.css" />
+
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
@@ -27,9 +29,10 @@
                 </h1>
             </header>
             <div class="row">
-                <div class="col-md-10">
-                    Chat
+                <div class="col-md-10"  >
+                    <div class="chat-messages-panel" id="chat-messages-panel">
 
+                    </div>
                 </div>
                 <div class="col-md-2">
                     Users list
@@ -37,11 +40,11 @@
             </div>
             <div class="row">
                 <div class="col-md-10">
-                    <form id="sendMessage">
+                    <form id="chat-send-message-form">
                         <div class="input-group">
-                            <input type="text" class="form-control chat-message-input" />
+                            <input type="text" class="form-control chat-message-input" id="chat-message-input" />
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" id="chat-send-button">
+                                <button type="button" class="btn btn-primary" id="chat-send-button">
                                     Send!
                                 </button>
                             </span>
@@ -54,6 +57,10 @@
                 </div>
             </div>
         </div>
+
+    <script>
+        chat.init();
+    </script>
 
 
     </body>
