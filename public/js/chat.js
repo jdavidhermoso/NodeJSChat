@@ -1,15 +1,19 @@
+;(function (w, d) {
+    'use strict';
+    
 var chat = {
     socket:undefined,
     init:function() {
 
-        chat.socket = io.connect();
-        var messageForm = document.getElementById('chat-send-message-form');
-        var messageSendButton = document.getElementById('chat-send-button');
-        var message_input = document.getElementById('chat-message-input');
+        chat.socket = io.connect('http://localhost:8080');
+        var messageForm = d.getElementById('chat-send-message-form'),
+            messageSendButton = d.getElementById('chat-send-button'),
+            message_input = d.getElementById('chat-message-input');
 
 
 
         messageSendButton.addEventListener('click', function(e){
+            e.preventDefault();
             chat.sendMessage(message_input);
         });
 
@@ -22,8 +26,8 @@ var chat = {
 
     },
     receiveMessage:function(message) {
-        var time = new Date();
-        var messages_panel = document.getElementById('chat-messages-panel');
+        var time = new Date(),
+            messages_panel = d.getElementById('chat-messages-panel');
 
         messages_panel.innerHTML += "<div class='chat-message-container chat-message-in'> <p class='chat-message-time'> "+time.getHours() +":"+time.getMinutes() +" </p><p class='chat-message'>"+message+"</p></div>";
 
@@ -38,7 +42,7 @@ var chat = {
         }
 
     }
-
-
-
 };
+
+d.addEventListener('DOMContentLoaded', chat.init, false);
+}(window, document));
