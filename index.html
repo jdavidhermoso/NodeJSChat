@@ -18,8 +18,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script src="/socket.io/socket.io.js"></script>
-
-    <script src="./js/chat.js"></script>
 </head>
     <body>
         <div class="container">
@@ -44,9 +42,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control chat-message-input" id="chat-message-input" />
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary" id="chat-send-button">
-                                    Send!
-                                </button>
+                                <input type="submit" value="Send!" class="btn btn-primary" id="chat-send-button">
                             </span>
 
                         </div>
@@ -58,10 +54,6 @@
             </div>
         </div>
 
-    <script>
-        chat.init();
-    </script>
-
-
+<script src="./js/chat.js"></script>
     </body>
 </html>

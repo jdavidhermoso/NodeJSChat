@@ -1,9 +1,10 @@
 var express = require('express'),
     app = express(),
     server = require('http').createServer(app),
-    io = require('socket.io').listen(server);
+    io = require('socket.io').listen(server),
+    port = 8080;
 
-server.listen(8080);
+server.listen(port, console.log.bind(console, 'Node running in http://localhost:' + port));
 app.use(express.static(__dirname+'/public'));
 app.get('/',function(req,res){
 
