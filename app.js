@@ -4,7 +4,7 @@ var express = require('express'),
     io = require('socket.io').listen(server),
     port = Number(process.env.PORT || 5000);
 
-server.listen(port, console.log.bind(console, 'Node running in http://localhost:' + port));
+server.listen(port);
 app.use(express.static(__dirname+'/public'));
 
 app.get('/',function(req,res){
