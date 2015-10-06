@@ -2,14 +2,14 @@
     'use strict';
     
 var chat = {
-    socket:undefined,
+
     host: undefined,
     ws: undefined,
     init:function() {
         chat.host = location.origin.replace(/^http/,'ws');
         chat.ws = new WebSocket(chat.host);
 
-        chat.socket = io.connect('https://nameless-river-8578.herokuapp.com:5000');
+
         var messageForm = d.getElementById('chat-send-message-form'),
             messageSendButton = d.getElementById('chat-send-button'),
             message_input = d.getElementById('chat-message-input');
@@ -41,7 +41,7 @@ var chat = {
     sendMessage:function(message) {
 
         if (message.value != "") {
-            chat.socket.emit('sendMessage', message.value);
+            
             message.value = "";
         }
 
