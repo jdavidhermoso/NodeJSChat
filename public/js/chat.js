@@ -5,7 +5,7 @@ var chat = {
     socket:undefined,
     init:function() {
 
-        chat.socket = io.connect('http://localhost:8080');
+        chat.socket = io.connect('https://nameless-river-8578.herokuapp.com/:5000');
         var messageForm = d.getElementById('chat-send-message-form'),
             messageSendButton = d.getElementById('chat-send-button'),
             message_input = d.getElementById('chat-message-input');
