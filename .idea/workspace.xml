@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/public/js/chat.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.21794872" vertical-offset="0" max-vertical-offset="901">
-              <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+              <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -439,12 +439,12 @@
       <updated>1443970099412</updated>
       <workItem from="1443970099133" duration="12446000" />
       <workItem from="1444069908821" duration="4000" />
-      <workItem from="1444162251599" duration="844000" />
+      <workItem from="1444162251599" duration="1222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13294000" />
+    <option name="totallyTimeSpent" value="13672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -533,7 +533,7 @@
     <entry file="file://$PROJECT_DIR$/public/js/chat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21794872" vertical-offset="0" max-vertical-offset="901">
-          <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
           <folding />
         </state>
       </provider>
