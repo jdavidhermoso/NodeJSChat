@@ -6,18 +6,23 @@ var express = require('express'),
 
 server.listen(port, console.log.bind(console, 'Node running in http://localhost:' + port));
 app.use(express.static(__dirname+'/public'));
+
 app.get('/',function(req,res){
 
     res.sendfile(__dirname+'/index.html');
 });
 
+var wss = new WebSocketServer({server:server});
+console.log('Websocket server was created!');
 
 
-io.sockets.on('connection', function(socket){
+
+
+wss.on('connection', function(socket){
     //Every time someone connects to the chat, a socket is created.
     socket.on('sendMessage', function(data) {
 
-        io.sockets.emit('newMessage', {msg: data});
+        wss.emit('newMessage', {msg: data});
 
     });
 });

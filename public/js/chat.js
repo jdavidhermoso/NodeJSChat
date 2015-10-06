@@ -3,7 +3,11 @@
     
 var chat = {
     socket:undefined,
+    host: undefined,
+    ws: undefined,
     init:function() {
+        chat.host = location.origin.replace(/^http/,'ws');
+        chat.ws = new WebSocket(chat.host);
 
         chat.socket = io.connect('https://nameless-river-8578.herokuapp.com:5000');
         var messageForm = d.getElementById('chat-send-message-form'),
@@ -19,10 +23,10 @@ var chat = {
 
 
 
-        chat.socket.on('newMessage', function(data){
+        chat.ws.onmessage = function(event){
+            chat.receiveMessage(event.data.msg);
+        }
 
-            chat.receiveMessage(data.msg);
-        });
 
     },
     receiveMessage:function(message) {
