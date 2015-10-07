@@ -18,7 +18,7 @@ var chat = {
 
         messageSendButton.addEventListener('click', function(e){
             e.preventDefault();
-            chat.sendMessage(message_input);
+            chat.ws.send(message_input.value);
         });
 
 
@@ -36,14 +36,6 @@ var chat = {
         messages_panel.innerHTML += "<div class='chat-message-container chat-message-in'> <p class='chat-message-time'> "+time.getHours() +":"+time.getMinutes() +" </p><p class='chat-message'>"+message+"</p></div>";
 
        messages_panel.scrollTop = messages_panel.scrollHeight;
-
-    },
-    sendMessage:function(message) {
-
-        if (message.value != "") {
-            
-            message.value = "";
-        }
 
     }
 };
