@@ -18,13 +18,15 @@ var chat = {
 
         messageSendButton.addEventListener('click', function(e){
             e.preventDefault();
+
             chat.ws.send(message_input.value);
+
         });
 
+        chat.ws.onmessage = function(message){
 
 
-        chat.ws.onmessage = function(event){
-            chat.receiveMessage(event.data.msg);
+            chat.receiveMessage(message.data);
         }
 
 

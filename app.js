@@ -2,7 +2,10 @@ var express = require('express'),
     WebSocketServer = require("ws").Server,
     app = express(),
     server = require('http').createServer(app),
-    port = Number(process.env.PORT || 5000);
+    port = Number(process.env.PORT || 5000),
+    clients_counter = 0,
+    client_id = 0
+    clients = [];
 
 server.listen(port);
 
@@ -15,11 +18,23 @@ app.get('/',function(req,res){
 
 var wss = new WebSocketServer({server:server});
 
-wss.on('connection', function(socket){
-    //Every time someone connects to the chat, a socket is created.
-    socket.on('sendMessage', function(data) {
+wss.on('connection', function(socket) {
+    clients_counter++;
+    client_id = clients_counter;
 
-        wss.emit('newMessage', {msg: data});
+    clients[client_id] = socket;
+    wss.id = client_id;
 
+
+
+    socket.on('message',function(data){
+        wss.clients.forEach(function(client) {
+            client.send(data);
+        });
+
+    });
+
+    socket.on('close',function(data){
+        clients[wss.id]
     });
 });
